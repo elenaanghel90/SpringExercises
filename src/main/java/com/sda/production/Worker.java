@@ -1,6 +1,10 @@
-package com.sda.Production;
+package com.sda.production;
 
 public class Worker {
+    private String profession;
+    private int age;
+
+
     public String getProfession() {
         return profession;
     }
@@ -17,6 +21,5 @@ public class Worker {
         this.age = age;
     }
 
-    private String profession;
-    private int age;
+
 }

@@ -1,4 +1,4 @@
-package com.sda.Production;
+package com.sda.production;
 
 public class WorkerMotto {
     private String citate;
