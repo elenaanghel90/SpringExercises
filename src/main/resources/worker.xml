@@ -9,4 +9,7 @@
         <property name="age" value="29"/>
         <property name="profession" value="Chimist"/>
     </bean>
+    <bean name="workerMotto" class="com.sda.production.WorkerMotto">
+        <property name="citate" value="Nicolae Iorga"/>
+    </bean>
 </beans>
