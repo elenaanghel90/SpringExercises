@@ -19,4 +19,30 @@ public class Tool {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Tool tool = (Tool) o;
+
+        if (weight != tool.weight) return false;
+        return name.equals(tool.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = weight;
+        result = 31 * result + name.hashCode();
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Tool{" +
+                "weight=" + weight +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

@@ -7,5 +7,6 @@
     <bean name="Tool" class="com.sda.production.Tool">
         <property name="weight" value="200"/>
         <property name="name" value="surubelnita"/>
+
     </bean>
 </beans>

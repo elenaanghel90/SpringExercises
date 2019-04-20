@@ -5,10 +5,18 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean name="worker" class="com.sda.production.Worker">
-        <property name="age" value="29"/>
-        <property name="profession" value="Chimist"/>
+    <bean name="worker" class="com.sda.production.Worker" scope="prototype">
+        <!--<property name="age" value="29"/>
+        <property name="profession" value="Chimist"/>-->
+        <constructor-arg index="0" value="Farmacist"/>
+        <constructor-arg index="1" value="20"/>
     </bean>
+
+    <!--<bean name="worker1" class="com.sda.production.Worker" scope="prototype">-->
+    <!--<constructor-arg index="2" value="Inginer"/>-->
+    <!--<constructor-arg index="3" value="21"/>-->
+    <!--</bean>-->
+
     <bean name="workerMotto" class="com.sda.production.WorkerMotto">
         <property name="citate" value="Nicolae Iorga"/>
     </bean>
