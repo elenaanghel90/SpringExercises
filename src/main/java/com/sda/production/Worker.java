@@ -1,14 +1,20 @@
 package com.sda.production;
 
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 
 import java.util.List;
 
 public class Worker {
+
+    public static final Log LOGGER = LogFactory.getLog(Worker.class);
     private String profession;
     private int age;
-    @Autowired private WorkerMotto workerMotto;
+    @Autowired
+    private WorkerMotto workerMotto;
     List<Tool> tools;
 
 
@@ -41,6 +47,15 @@ public class Worker {
     public List<Tool> getTools() {
         return tools;
     }
+
+    public void initWorker() {
+        LOGGER.info("welcome to log and initialize");
+    }
+
+    public void destroyWorker() {
+        LOGGER.info("Left the log and destroy");
+    }
+
 
     @Override
     public boolean equals(Object o) {

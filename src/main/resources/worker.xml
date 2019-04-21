@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean name="worker" class="com.sda.production.Worker" >
+    <bean name="worker" class="com.sda.production.Worker" init-method="initWorker" destroy-method="destroyWorker">
         <!--<property name="age" value="29"/>
         <property name="profession" value="Chimist"/>-->
         <constructor-arg index="0" value="Farmacist"/>
@@ -22,4 +22,8 @@
     <bean name="workerMotto" class="com.sda.production.WorkerMotto">
         <constructor-arg value="No worker without tools"/>
     </bean>
+    <bean name="myOwnBeanPostProcessor" class="com.sda.postprocessor.MyOwnBeanPostProcessor">
+    </bean>
+
+
 </beans>

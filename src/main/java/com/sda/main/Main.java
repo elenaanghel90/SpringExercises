@@ -1,6 +1,7 @@
 package com.sda.main;
 
 import com.sda.com.sda.config.WorkerConfig;
+import com.sda.postprocessor.MyOwnBeanPostProcessor;
 import com.sda.production.Worker;
 import com.sda.production.WorkerMotto;
 import org.springframework.context.ApplicationContext;
@@ -9,24 +10,24 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        String[] beans = new String[]{
-                "worker.xml", "tools.xml"};
+        String[] beans = new String[]{"worker.xml", "tools.xml"};
+
         ApplicationContext xmlapplicationContext = new ClassPathXmlApplicationContext(beans);
 
+
         Worker worker = xmlapplicationContext.getBean(Worker.class);
-        //Worker worker1 = xmlapplicationContext.getBean(Worker.class);
         System.out.println("\n\n" + worker + "\n\n");
+        worker.initWorker();
+       //worker.destroyWorker();
 
-        ApplicationContext annotationApplicationContext =
-                new AnnotationConfigApplicationContext(WorkerConfig.class);
+        ((ClassPathXmlApplicationContext)xmlapplicationContext).close();
 
-        WorkerMotto workerMottoAnnotation= annotationApplicationContext.getBean(WorkerMotto.class);
-        System.out.println(workerMottoAnnotation);
-
-
-
-
-
+        //Worker worker1 = xmlapplicationContext.getBean(Worker.class);
+//        ApplicationContext annotationApplicationContext =
+//                new AnnotationConfigApplicationContext(WorkerConfig.class);
+//
+//        WorkerMotto workerMottoAnnotation= annotationApplicationContext.getBean(WorkerMotto.class);
+//        System.out.println(workerMottoAnnotation);
 //        Tool tool = xmlapplicationContext.getBean(Tool.class);
 //        System.out.println(tool);
 //        WorkerMotto testWorkerMoto = xmlapplicationContext.getBean(WorkerMotto.class);
