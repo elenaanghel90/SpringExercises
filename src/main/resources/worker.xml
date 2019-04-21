@@ -5,11 +5,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean name="worker" class="com.sda.production.Worker" scope="prototype">
+    <bean name="worker" class="com.sda.production.Worker" >
         <!--<property name="age" value="29"/>
         <property name="profession" value="Chimist"/>-->
         <constructor-arg index="0" value="Farmacist"/>
         <constructor-arg index="1" value="20"/>
+        <constructor-arg index="2" ref="workerMotto"/>
+        <property name="tools" ref="tools"/>
     </bean>
 
     <!--<bean name="worker1" class="com.sda.production.Worker" scope="prototype">-->
@@ -18,6 +20,6 @@
     <!--</bean>-->
 
     <bean name="workerMotto" class="com.sda.production.WorkerMotto">
-        <property name="citate" value="Nicolae Iorga"/>
+        <constructor-arg value="No worker without tools"/>
     </bean>
 </beans>

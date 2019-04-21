@@ -4,6 +4,12 @@ public class Tool {
     private int weight;
     private String name;
 
+    public Tool(int weight, String name) {
+        this.weight = weight;
+        this.name = name;
+    }
+    public Tool(){}
+
     public int getWeight() {
         return weight;
     }

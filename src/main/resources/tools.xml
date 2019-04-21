@@ -3,10 +3,30 @@
 <beans xmlns = "http://www.springframework.org/schema/beans"
        xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation = "http://www.springframework.org/schema/beans
-   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-    <bean name="Tool" class="com.sda.production.Tool">
-        <property name="weight" value="200"/>
-        <property name="name" value="surubelnita"/>
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--<bean name="surubelnita" class="com.sda.production.Tool">-->
+        <!--<property name="weight" value="200"/>-->
+        <!--<property name="name" value="surubelnita"/>-->
+    <!--</bean>-->
+    <!--<bean name="hammer" class="com.sda.production.Tool">-->
+        <!--<property name="weight" value="10"/>-->
+        <!--<property name="name" value="saw"/>-->
+    <!--</bean>-->
 
+    <bean name="hammer" class="com.sda.production.Tool">
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg index="1" value="hammer"/>
+    </bean>
+    <bean name="surubelnita" class="com.sda.production.Tool">
+        <constructor-arg index="0" value="3"/>
+        <constructor-arg index="1" value="surubelnita"/>
+    </bean>
+    <bean name="tools" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="hammer"/>
+                <ref bean="surubelnita"/>
+            </list>
+        </constructor-arg>
     </bean>
 </beans>
